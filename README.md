@@ -1,4 +1,4 @@
-# Debian 12.10 with Deno
+# Debian 12.10 with Deno in the KDE Plasma Desktop Environment
 
 ## Prerequisites
 
