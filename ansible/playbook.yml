@@ -1,0 +1,29 @@
+---
+
+- name: Setup Debian 12.10 with Deno and Fresh
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install system dependencies
+      apt:
+        name:
+          - curl
+          - unzip
+          - git
+        state: present
+        update_cache: yes
+    
+    - name: Install Deno globally
+      shell: |
+        curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh
+      args:
+        creates: /usr/local/bin/deno
+
+    - name: Symlink Deno to /usr/bin
+      file:
+        src: /usr/local/bin/deno
+        dest: /usr/bin/deno
+        state: link
+        force: yes
+    
