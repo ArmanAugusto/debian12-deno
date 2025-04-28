@@ -14,34 +14,6 @@
           - vim
         state: present
         update_cache: yes
-    
-    - name: Create a .vimrc with specific settings
-      copy:
-        dest: "{{ ansible_env.HOME }}/.vimrc"
-        content: |
-          set number
-          set tabstop=4
-          set ruler
-          set smarttab
-          set shiftwidth=4
-          set expandtab
-          set nobackup
-
-          set incsearch
-          set ignorecase
-          set smartcase
-          set showmatch
-          set hlsearch
-
-          set wildmenu
-          set wildmode=list:longest
-          set wildignore=*.docx,*.jpg,*.png,*.git,*.pdf,*.pyc,*.exe,*.flv,*.imp,*.xlsx
-          
-          syntax on
-          filetype plugin indent on
-          set background=dark
-          colorscheme slate
-          hi Normal guibg=NONE ctermbg=NONE
 
     - name: Install Deno globally
       shell: |
