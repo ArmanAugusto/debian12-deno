@@ -1,6 +1,6 @@
 ---
 
-- name: Setup Debian 12.10 with Deno and Fresh
+- name: Setup Debian 12.10 with Deno
   hosts: all
   become: yes
 
